@@ -6,7 +6,7 @@
 #    By: geliz <geliz@student.42.fr>                +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/09/13 17:11:13 by geliz             #+#    #+#              #
-#    Updated: 2020/01/11 19:59:40 by geliz            ###   ########.fr        #
+#    Updated: 2020/01/12 14:10:11 by geliz            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,7 @@ SRC = $(SRC_DIR)/ft_printf_hub.c $(SRC_DIR)/check_content.c $(SRC_DIR)/readkeys.
 	  $(SRC_DIR)/type_float_apply_plus_space.c $(SRC_DIR)/type_float_keys_to_spec.c $(SRC_DIR)/type_float_long.c \
 	  $(SRC_DIR)/ft_from_lib_newstrings.c $(SRC_DIR)/ft_from_lib_fill_and_del_str.c $(SRC_DIR)/ft_from_lib_atoi_toupp.c \
 	  $(SRC_DIR)/ft_type_binary.c $(SRC_DIR)/ft_strjoin_spec.c $(SRC_DIR)/ft_printf_bonus_hub.c $(SRC_DIR)/bonus_colors.c \
-	  $(SRC_DIR)/bonus_color_add_colorcode.c
+	  $(SRC_DIR)/bonus_color_add_colorcode.c $(SRC_DIR)/bonus_color_add_back_colorcode.c
 OBJ_DIR = .
 OBJ = $(SRC:$(SRC_DIR)/%.c=$(OBJ_DIR)/%.o)
 
@@ -37,7 +37,7 @@ $(NAME): $(OBJ)
 		ar rc $(NAME) $(OBJ)
 
 $(OBJ_DIR)/%.o: $(SRC_DIR)/%.c
-		@gcc -c $(FLAGS) -I$(HEADERS) $< -o $@
+		gcc -c $(FLAGS) -I$(HEADERS) $< -o $@
 
 clean:
 		rm -rf $(OBJ)

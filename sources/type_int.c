@@ -6,7 +6,7 @@
 /*   By: geliz <geliz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/02 17:41:58 by geliz             #+#    #+#             */
-/*   Updated: 2020/01/11 19:50:29 by geliz            ###   ########.fr       */
+/*   Updated: 2020/01/12 13:18:31 by geliz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,20 +42,14 @@ char	*ft_plus_to_int(char *ret)
 
 int		ft_is_nmb_zero(t_info *in, char *ret)
 {
-	int		z;
-
 	if (in->base == 'o' && in->octotorp == 1)
 		return (0);
 	if (ft_strlen(ret) > 1)
 		return (0);
-	if (in->base == 'd')
+	if (ret[0] == '0')
 	{
-		z = ft_atoi(ret);
-		if (z == 0)
-		{
-			ft_strdel(&ret);
-			return (1);
-		}
+		ft_strdel(&ret);
+		return (1);
 	}
 	return (0);
 }

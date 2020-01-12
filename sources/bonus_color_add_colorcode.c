@@ -6,11 +6,27 @@
 /*   By: geliz <geliz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 17:03:07 by geliz             #+#    #+#             */
-/*   Updated: 2020/01/11 17:33:05 by geliz            ###   ########.fr       */
+/*   Updated: 2020/01/12 13:47:29 by geliz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
+
+char	*ft_find_color_in_string(char *str, char *color, int len)
+{
+	int		i;
+
+	i = 0;
+	while (i < len && str[i] == color[i])
+	{
+		if (str[i] == '\0')
+			return (NULL);
+		i++;
+	}
+	if (i == len)
+		return (str);
+	return (NULL);
+}
 
 char	*ft_colorcode_join(char *str, int i, t_info *in, char *color)
 {
@@ -61,7 +77,7 @@ char	*ft_is_it_color_part_two(char *str, int i, t_info *in)
 		ret = ft_colorcode_join(str, i, in, "\x1b[37m");
 		in->base = i + 7;
 	}
-	return (ret == NULL ? ft_is_it_end_of_color(str, i, in) : ret);
+	return (ret == NULL ? ft_is_it_backgr_color(str, i, in) : ret);
 }
 
 char	*ft_is_it_color(char *str, int i, t_info *in)

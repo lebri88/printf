@@ -6,7 +6,7 @@
 /*   By: geliz <geliz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/10 16:58:08 by geliz             #+#    #+#             */
-/*   Updated: 2020/01/11 17:05:33 by geliz            ###   ########.fr       */
+/*   Updated: 2020/01/12 13:47:27 by geliz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,7 @@ int		ft_colorprintf(const char *c, ...)
 	t_info		*info;
 	va_list		ap;
 	char		*str;
+	int			ret;
 
 	info = NULL;
 	if (!(info = ft_create_info(info, 0)))
@@ -48,7 +49,9 @@ int		ft_colorprintf(const char *c, ...)
 	if (!str)
 		return (0);
 	info->position = ft_add_colors_to_text(str, info);
+	ret = info->position;
 	va_end(ap);
 	free(info);
-	return (info->position);
+	info = NULL;
+	return (ret);
 }

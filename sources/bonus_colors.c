@@ -6,27 +6,11 @@
 /*   By: geliz <geliz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/01/11 15:14:04 by geliz             #+#    #+#             */
-/*   Updated: 2020/01/11 17:33:37 by geliz            ###   ########.fr       */
+/*   Updated: 2020/01/12 13:47:30 by geliz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-
-char	*ft_find_color_in_string(char *str, char *color, int len)
-{
-	int		i;
-
-	i = 0;
-	while (i < len && str[i] == color[i])
-	{
-		if (str[i] == '\0')
-			return (NULL);
-		i++;
-	}
-	if (i == len)
-		return (str);
-	return (NULL);
-}
 
 char	*ft_strjoin_free(char *s1, char *s2)
 {

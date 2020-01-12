@@ -6,7 +6,7 @@
 /*   By: geliz <geliz@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/16 16:15:40 by geliz             #+#    #+#             */
-/*   Updated: 2020/01/11 17:34:15 by geliz            ###   ########.fr       */
+/*   Updated: 2020/01/12 13:50:14 by geliz            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -286,7 +286,6 @@ int					ft_colorprintf(const char *c, ...);
 */
 int					ft_add_colors_to_text(char *str, t_info *in);
 char				*ft_strjoin_free(char *s1, char *s2);
-char				*ft_find_color_in_string(char *str, char *color, int len);
 /*
 **bonus_color_add_colorcode.c
 */
@@ -295,4 +294,11 @@ char				*ft_is_it_color_part_two(char *str, int i, t_info *in);
 char				*ft_is_it_end_of_color(char *str, int i, t_info *in);
 char				*ft_colorcode_join(char *str, int i, t_info *in,
 						char *color);
+char				*ft_find_color_in_string(char *str, char *color, int len);
+/*
+**bonus_color_add_back_colorcode.c
+*/
+char				*ft_is_it_backgr_color(char *str, int i, t_info *in);
+char				*ft_is_it_backgr_color_part_two(char *str, int i,
+						t_info *in);
 #endif
